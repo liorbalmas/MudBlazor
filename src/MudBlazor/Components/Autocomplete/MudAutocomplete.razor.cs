@@ -138,6 +138,14 @@ namespace MudBlazor
             StateHasChanged();
         }
 
+        public async Task Clear()
+        {
+            await SetValueAsync(default);
+            await SetTextAsync(string.Empty, false);
+            ResetValidation();
+            StateHasChanged();
+        }
+
         public async Task ToggleMenu()
         {
             if (Disabled || MinCharacters > 0 && (string.IsNullOrEmpty(Text) || Text.Length < MinCharacters))
