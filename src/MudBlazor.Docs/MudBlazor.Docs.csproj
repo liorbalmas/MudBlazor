@@ -12,6 +12,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -89,9 +90,9 @@
 
   <!--Packages-->
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="9.5.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.3" />
+    <PackageReference Include="FluentValidation" Version="10.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
     <PackageReference Include="Toolbelt.Blazor.HeadElement" Version="5.4.1" />
   </ItemGroup>
@@ -99,7 +100,7 @@
   <!--Project dependencies-->
   <ItemGroup>
     <ProjectReference Include="../MudBlazor/MudBlazor.csproj" />
-      <ProjectReference Include="../MudBlazor.ExampleData/MudBlazor.ExampleData.csproj" />
+      <ProjectReference Include="../MudBlazor.Examples.Data/MudBlazor.Examples.Data.csproj" />
   </ItemGroup>
 
   <!--Excubo  webcompiler -  used for scss and js compilation-->
@@ -108,7 +109,7 @@
   </Target>
 
   <Target Name="WebCompiler" DependsOnTargets="ToolRestore">
-      <Exec Command="dotnet webcompiler ./Styles/MudBlazorDocs.scss -c excubowebcompiler.json" StandardOutputImportance="high" />
+      <Exec Command="dotnet webcompiler ./Styles/MudBlazorDocs.scss -c excubowebcompiler.json" StandardOutputImportance="high" StandardErrorImportance="high" />
   </Target>
 
   <!--Output of Excubo webcompiler-->

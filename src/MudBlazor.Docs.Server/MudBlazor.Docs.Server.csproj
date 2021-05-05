@@ -2,20 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <IsPackable>false</IsPackable>
     <UserSecretsId>8b1bb13d-4e11-4924-b174-cf040d6576ea</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.17.0" />
     <PackageReference Include="Toolbelt.Blazor.HeadElement" Version="5.4.1" />
     <PackageReference Include="Toolbelt.Blazor.HeadElement.ServerPrerendering" Version="1.5.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.5" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MudBlazor.Docs\MudBlazor.Docs.csproj" />
     <ProjectReference Include="..\MudBlazor.Docs.Client\MudBlazor.Docs.Client.csproj" />
-    <ProjectReference Include="..\MudBlazor.ExampleData\MudBlazor.ExampleData.csproj" />
+    <ProjectReference Include="..\MudBlazor.Examples.Data\MudBlazor.Examples.Data.csproj" />
   </ItemGroup>
 
 </Project>

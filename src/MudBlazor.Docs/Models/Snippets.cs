@@ -19,7 +19,7 @@ namespace MudBlazor.Docs.Models
         public const string Element = @"using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace MudBlazor.ExampleData.Models
+namespace MudBlazor.Examples.Data.Models
 {
     public class Element
     {
@@ -37,6 +37,19 @@ namespace MudBlazor.ExampleData.Models
         {
             return $""{Sign} - {Name}"";
         }
+    }
+}";
+
+        public const string Server = @"using System;
+
+namespace MudBlazor.Examples.Data.Models
+{
+    public class Server
+    {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public string Location { get; set; }
+        public string IpAddress { get; set; }
     }
 }";
     }

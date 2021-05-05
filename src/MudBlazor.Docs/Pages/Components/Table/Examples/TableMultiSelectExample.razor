@@ -1,5 +1,5 @@
 ﻿@using System.Net.Http.Json
-@using MudBlazor.ExampleData.Models
+@using MudBlazor.Examples.Data.Models
 @namespace MudBlazor.Docs.Examples
 @inject HttpClient httpClient
 
@@ -21,6 +21,9 @@
     <PagerContent>
         <MudTablePager PageSizeOptions="new int[]{50, 100}" />
     </PagerContent>
+    <FooterContent>
+        <MudTd colspan="5">Select All</MudTd>
+    </FooterContent>
 </MudTable>
 <MudText Inline="true">Selected items: @(selectedItems==null ? "" : string.Join(", ", selectedItems.OrderBy(x=>x.Sign).Select(x=>x.Sign)))</MudText>
 
@@ -32,6 +35,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        Elements = await httpClient.GetFromJsonAsync<List<Element>>("webapi/periodicTable");
+        Elements = await httpClient.GetFromJsonAsync<List<Element>>("webapi/periodictable");
     } 
 }
